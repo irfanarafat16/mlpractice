@@ -81,24 +81,3 @@ ser = pd.Series(np.random.randint(1, 10, 35))
 df = pd.DataFrame(ser.values.reshape(7,5))
 print(df)'''
 
-'''#How to make a python function that handles scalars to work on numpy arrays
-def maxx(x, y):
-    """Get the maximum of two items"""
-    if x >= y:
-        return x
-    else:
-        return y
-
-pair_max = np.vectorize(maxx, otypes=[float])
-
-a = np.array([5, 7, 9, 8, 6, 4, 5])
-b = np.array([6, 3, 4, 8, 9, 7, 1])
-
-print(pair_max(a, b))'''
-
-#How to swap two columns in a 2d numpy array
-
-arr = np.arange(9).reshape(3,3)
-print(arr)
-
-print(arr[:, [1,0,2]])
