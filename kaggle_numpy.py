@@ -172,7 +172,7 @@ print(sepallength)
 mu, med, sd = np.mean(sepallength), np.median(sepallength), np.std(sepallength)
 print(f'mean_value: {mu}, median_value: {med}, standard_deviation_value: {sd}')'''
 
-#How to normalize an array so the values range exactly between 0 and 1
+'''#How to normalize an array so the values range exactly between 0 and 1
 url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
 sepallength = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0])
 print(sepallength)
@@ -181,6 +181,6 @@ S = (sepallength - Smin)/sepallength.ptp()
 #ptp preserves the data type of the array.
 #This means the return value for an input of signed integers with n bits (e.g. np.int8, np.int16, etc)
 np.set_printoptions(precision=3)
-print(S)
+print(S)'''
 
 #
