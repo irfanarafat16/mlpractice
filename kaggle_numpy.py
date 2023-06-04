@@ -183,4 +183,37 @@ S = (sepallength - Smin)/sepallength.ptp()
 np.set_printoptions(precision=3)
 print(S)'''
 
-#
+'''#How to compute the softmax score
+# Input
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+iris = np.genfromtxt(url, delimiter=',', dtype='object')
+sepallength = np.array([float(row[0]) for row in iris])
+
+# Solution
+def softmax(x):
+    """Compute softmax values for each sets of scores in x.
+    https://stackoverflow.com/questions/34968722/how-to-implement-the-softmax-function-in-python"""
+    e_x = np.exp(x - np.max(x))
+    return e_x / e_x.sum(axis=0)
+
+print(softmax(sepallength))
+print(sum(softmax(sepallength))+0.0000000000000001)'''
+
+'''#How to find the percentile scores of a numpy array
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+sepallength = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0])
+
+ans = np.percentile(sepallength, q=[5, 95])
+print(ans)
+#print(np.percentile(sepallength, q=[20, 80]))'''
+
+#How to insert values at random positions in an array
+rrr = np.arange(10).reshape(2,5)
+print(rrr)
+#method 1
+i, j = np.where(rrr)
+print(i,j)
+np.random.seed(100)
+rrr[np.random.choice((i), 5), np.random.choice((j), 5)] = 9999
+print(rrr)
+
