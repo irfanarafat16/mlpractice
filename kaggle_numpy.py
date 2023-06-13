@@ -208,7 +208,7 @@ print(ans)
 #print(np.percentile(sepallength, q=[20, 80]))'''
 
 #How to insert values at random positions in an array
-rrr = np.arange(10).reshape(2,5)
+'''rrr = np.arange(10).reshape(2,5)
 print(rrr)
 #method 1
 i, j = np.where(rrr)
@@ -216,4 +216,47 @@ print(i,j)
 np.random.seed(100)
 rrr[np.random.choice((i), 5), np.random.choice((j), 5)] = 9999
 print(rrr)
+#rrr[0, 1] = 9999
+#print(rrr)'''
+'''print(np.where([ [True, False]],
+               [[1, 2]
+              , [3, 4]],
+               [[5, 6],
+                [7, 8]]))'''
+
+'''#find the position of missing values in numpy array
+url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+iris_2d = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0,1,2,3])
+print(iris_2d)
+iris_2d[np.random.randint(150, size=20), np.random.randint(4, size=20)] = np.nan
+
+# Solution
+print("Number of missing values: \n", np.isnan(iris_2d[:, 0]).sum())
+print("Position of missing values: \n", np.where(np.isnan(iris_2d[:, 0])))
+'''
+
+#drop rows that contain a missing value from a numpy array
+'''url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+iris_2d = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0,1,2,3])
+iris_2d[np.random.randint(150, size=20), np.random.randint(4, size=20)] = np.nan
+#print(iris_2d)
+any_nan_in_row = np.array([~np.any(np.isnan(row)) for row in iris_2d])
+pp = iris_2d[any_nan_in_row][:5]
+print(pp)'''
+
+#find the correlation between two columns
+'''url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+iris = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0,1,2,3])
+
+pp = np.corrcoef(iris[:, 0], iris[:, 2])[0, 1]
+print(pp)'''
+
+#find if a given array has any null values
+'''url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
+iris_2d = np.genfromtxt(url, delimiter=',', dtype='float', usecols=[0,1,2,3])
+iris_2d[np.random.randint(150, size=20), np.random.randint(4, size=20)] = np.nan
+
+# Solution
+iris_2d[np.isnan(iris_2d)] = 0
+print(iris_2d[:4])'''
 
